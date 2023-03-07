@@ -3,6 +3,7 @@ from projects.forms import ProjectForm
 from projects.models import Project
 from tasks.models import Task
 from django.contrib.auth.decorators import login_required
+from django.contrib.auth import get_user_model
 
 
 # Create your views here.
@@ -34,6 +35,10 @@ def create_project(request):
             return redirect("list_projects")
     else:
         form = ProjectForm()
+
+    # user = get_user_model()
+    # form.fields["owner"].queryset = user.objects.filter(pk=request.user.id)
+
     context = {
         "form": form,
     }

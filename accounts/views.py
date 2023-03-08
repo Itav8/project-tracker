@@ -8,6 +8,7 @@ from django.contrib.auth.models import User
 def user_login(request):
     if request.method == "POST":
         form = LoginForm(request.POST)
+
         if form.is_valid():
             username = form.cleaned_data["username"]
             password = form.cleaned_data["password"]
@@ -15,6 +16,7 @@ def user_login(request):
 
             if user is not None:
                 login(request, user)
+
                 return redirect("home")
     else:
         form = LoginForm()
@@ -22,6 +24,7 @@ def user_login(request):
     context = {
         "form": form,
     }
+
     return render(request, "accounts/login.html", context)
 
 
@@ -33,6 +36,7 @@ def user_logout(request):
 def signup(request):
     if request.method == "POST":
         form = SignUpForm(request.POST)
+
         if form.is_valid():
             username = form.cleaned_data["username"]
             password = form.cleaned_data["password"]
@@ -42,12 +46,15 @@ def signup(request):
                 user = User.objects.create_user(username, password=password)
                 user.save()
                 login(request, user)
+
                 return redirect("list_projects")
             else:
                 form.add_error("password", "Passwords do not match")
     else:
         form = SignUpForm()
+
     context = {
         "form": form,
     }
+
     return render(request, "accounts/signup.html", context)

@@ -1,20 +1,20 @@
 {% extends 'base.html' %}
-
+{% load static %}
 {% block content %}
     <main>
         <div>
             <h1>My Projects</h1>
             <p>
-                <a href="{% url 'create_project' %}">Create a new project</a>
+                <a href="{% url 'create_project' %}">New Project</a>
             </p>
             {% if project_list|length == 0 %}
-                <p>You are not assigned to any projects</p>
+                <p>You are not assigned to any projects.</p>
             {% else %}
                 <table>
                     <thead>
                         <tr>
                             <th>Name</th>
-                            <th>Number of tasks</th>
+                            <th>Number of Tasks</th>
                         </tr>
                     </thead>
                     <tbody>

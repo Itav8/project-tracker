@@ -1,0 +1,58 @@
+body {
+  background: #6096B4;
+  height: 100vh;
+  margin: 0;
+  color: #EEE9DA;
+}
+
+main {
+  padding: 10px;
+}
+
+nav {
+  background: #93BFCF;
+  box-shadow: .5px .5px 5px 8px rgba(0, 0, 0, 0.1);
+  width: 100%;
+}
+
+ul {
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 95%;
+  margin: 0;
+}
+
+li a {
+  display: flex;
+  padding: 30px;
+  font-family: 'Oswald', sans-serif;
+  font-size: x-large;
+  text-transform: uppercase;
+  width: fit-content;
+}
+
+a {
+  text-decoration: none;
+  color: #EEE9DA;
+  transition: background-color 1s, color 1s;
+}
+
+a:visited {
+  color: #EEE9DA;
+}
+
+a:hover {
+  background-color: #BDCDD6;
+  color: black
+}
+
+.nav-projects {
+  flex: 1;
+}
+
+h1 {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 300;
+}

@@ -1,8 +1,13 @@
 {% extends 'base.html' %}
-
+{% load static %}
+{% block extrahead %}
+<link rel="stylesheet" href="{% static "css/projects.css" %}">
+<link rel="stylesheet" href="{% static "css/table.css" %}">
+{% endblock %}
 {% block content %}
     <main>
-        <div>
+        <div class="dashboard">
+            <div>
             <h1>My Tasks</h1>
             {% if task_list|length != 0 %}
                 <table>
@@ -30,6 +35,8 @@
             {% else %}
                 <p>You have no tasks</p>
             {% endif %}
+            </div>
+            <iframe src="https://calendar.google.com/calendar/embed?height=500&wkst=1&bgcolor=%23ffffff&ctz=America%2FNew_York&showTitle=0&showPrint=0&showTabs=0&showCalendars=0&showTz=0&showNav=0&src=ZW4udXNhI2hvbGlkYXlAZ3JvdXAudi5jYWxlbmRhci5nb29nbGUuY29t&color=%23D50000" style="border-width:0" width="500" height="500" frameborder="0" scrolling="no"></iframe>
         </div>
     </main>
 {% endblock content %}

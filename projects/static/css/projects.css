@@ -1,0 +1,13 @@
+.dashboard {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+}
+
+.create-button {
+  padding: 10px;
+}
+
+iframe {
+  justify-self: end;
+}

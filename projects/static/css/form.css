@@ -1,14 +1,9 @@
-body {
-  background: linear-gradient(180deg, #93BFCF, #6096B4);
-  height: 100vh;
+main {
   display: flex;
   justify-content: center;
-  align-items: center;
 }
 
-.container {
-  background-color: #93BFCF;
-  box-shadow: 1px 1px 5px 8px rgba(0, 0, 0, 0.2);
+.form-container {
   border-radius: 10px;
   display: flex;
   flex-direction: column;
@@ -49,39 +44,17 @@ form>p>input {
   border-style: none;
 }
 
-/* Button styles */
 button {
-  padding: 5px;
-  background-color: #6096B4;
-  border-radius: 10px;
+  padding: 10px;
+  margin-top: 20px;
+  background-color: #93BFCF;
+  border-radius: 5px;
+  border-style: none;
   color: #EEE9DA;
-  cursor: pointer;
-  border: none;
-  transition: background-color 1s, color 1s;
+  font-size: large;
 }
 
 button:hover {
   background-color: #BDCDD6;
   color: black
-}
-
-button>a {
-  text-decoration: none;
-}
-
-button>a:visited {
-  color: #EEE9DA;
-}
-
-.primary-button {
-  padding: 10px;
-  width: 100px;
-  border-color: #EEE9DA;
-}
-
-.small-button {
-  margin-top: 50px;
-  padding: 10px 10px;
-  width: 15%;
-  border-color: #EEE9DA;
 }

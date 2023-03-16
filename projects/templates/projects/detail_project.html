@@ -3,16 +3,28 @@
 {% block extrahead %}
 <link rel="stylesheet" href="{% static "css/projects.css" %}">
 <link rel="stylesheet" href="{% static "css/table.css" %}">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20,300,0,0" />
 {% endblock %}
 {% block content %}
     <main>
+        <div class="dashboard-header">
+            <h1>{{ project.name }}</h1>
+            <div class="search">
+                <form method="get">
+                    <input type="search" name="query" placeholder="Find a task...">
+                    <button>Search</button>
+                </form>
+            </div>
+        </div>
+        <p>{{ project.description }}</p>
         <div class="dashboard">
             <div>
-            <h1>{{ project.name }}</h1>
-            <p>{{ project.description }}</p>
             <h2>Tasks</h2>
             <p>
-                <a class="create-button" href="{% url 'create_task' %}">Create a new task</a>
+                <a class="create-button" href="{% url 'create_task' %}">
+                    <span class="material-symbols-outlined">add</span>
+                    New Task
+                </a>
             </p>
             {% if task_list.all|length != 0 %}
                 <table>

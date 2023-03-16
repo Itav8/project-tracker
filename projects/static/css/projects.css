@@ -4,8 +4,26 @@
   gap: 40px;
 }
 
+.dashboard-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.search {
+  margin-left: 30px
+}
+
 .create-button {
   padding: 10px;
+  background-color: #93BFCF;
+  border-radius: 5px;
+}
+
+.material-symbols-outlined {
+  position: relative;
+  top: 6px;
+  margin-right: 5px;
 }
 
 iframe {

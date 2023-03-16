@@ -6,9 +6,17 @@
 {% endblock %}
 {% block content %}
     <main>
+        <div class="dashboard-header">
+            <h1>My Tasks</h1>
+            <div class="search">
+                <form method="get">
+                    <input type="search" name="query" placeholder="Find a task...">
+                    <button>Search</button>
+                </form>
+            </div>
+        </div>
         <div class="dashboard">
             <div>
-            <h1>My Tasks</h1>
             {% if task_list|length != 0 %}
                 <table>
                     <thead>

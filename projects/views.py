@@ -10,6 +10,14 @@ from django.contrib.auth.decorators import login_required
 def show_project(request):
     projects = Project.objects.filter(owner=request.user)
 
+    if request.method == "GET":
+        query = request.GET.get("query", "")
+
+        if query:
+            projects = Project.objects.filter(
+                name__icontains=query, owner=request.user
+            )
+
     context = {
         "project_list": projects,
     }

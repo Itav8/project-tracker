@@ -3,14 +3,25 @@
 {% block extrahead %}
 <link rel="stylesheet" href="{% static "css/projects.css" %}">
 <link rel="stylesheet" href="{% static "css/table.css" %}">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20,300,0,0" />
 {% endblock %}
 {% block content %}
     <main>
+        <div class="dashboard-header">
+            <h1>My Projects</h1>
+            <div class="search">
+                <form method="get">
+                    <input type="search" name="query" placeholder="Find a project...">
+                    <button>Search</button>
+                </form>
+            </div>
+        </div>
         <div class="dashboard">
             <div>
-                <h1>My Projects</h1>
                 <p>
-                    <a class="create-button" href="{% url 'create_project' %}">New Project</a>
+                    <a class="create-button" href="{% url 'create_project' %}">
+                        <span class="material-symbols-outlined">add</span>New Project
+                    </a>
                 </p>
                 {% if project_list|length == 0 %}
                     <p>You are not assigned to any projects.</p>

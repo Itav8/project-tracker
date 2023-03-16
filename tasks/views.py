@@ -33,6 +33,14 @@ def create_task(request):
 def list_task(request):
     tasks = Task.objects.filter(assignee=request.user)
 
+    if request.method == "GET":
+            query = request.GET.get("query", "")
+
+            if query:
+                tasks = Task.objects.filter(
+                    name__icontains=query, assignee=request.user
+                )
+
     context = {
         "task_list": tasks,
     }
